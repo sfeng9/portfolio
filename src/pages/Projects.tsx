@@ -425,9 +425,7 @@ export default function Projects() {
 
   const goToNextPage = () => {
     setSwipeDirection("next")
-    setPage((current) =>
-      Math.min(activeProjects.length - pageSize, current + pageSize),
-    )
+    setPage((current) => current + pageSize)
   }
 
   return (

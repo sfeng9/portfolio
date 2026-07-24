@@ -7,13 +7,13 @@ import Education from "./pages/Education"
 import Skills from "./pages/Skills"
 export default function App() {
   return (
-    <div className="bg-[#0a0a0a] text-gray-300 min-h-screen">
-      <div className="flex">
+    <div className="min-h-screen overflow-x-hidden bg-[#0a0a0a] text-gray-300">
+      <div className="flex flex-col lg:flex-row">
         
         <Navbar />
 
-        <main className="ml-72 w-full border-0">
-          <div className="max-w-5xl mx-auto px-8 py-24 lg:px-12">
+        <main className="w-full border-0 lg:ml-72">
+          <div className="mx-auto max-w-5xl px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
             <About />
             <Experience />
             <Projects />

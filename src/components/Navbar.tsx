@@ -51,7 +51,7 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-72 px-12 py-24 border-0 bg-[#0a0a0a]">
+    <aside className="relative w-full border-0 bg-[#0a0a0a] px-8 py-12 lg:fixed lg:left-0 lg:top-0 lg:h-screen lg:w-72 lg:px-12 lg:py-24">
       
       {/* Profile Pic */}
       <div className="relative mb-4">
@@ -89,14 +89,14 @@ export default function Sidebar() {
       </div>
       
       {/* Location */}
-      <div className="mt-4 mb-20 flex items-center gap-2 text-gray-400">
+      <div className="mb-10 mt-4 flex items-center gap-2 text-gray-400 lg:mb-20">
         <MapPin size={16} />
         <span className="text-sm">Cary, NC</span>
       </div>
 
       {/* Navigation Links */}
       <nav>
-        <ul className="space-y-6">
+        <ul className="grid grid-cols-2 gap-x-6 gap-y-5 lg:block lg:space-y-6">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (

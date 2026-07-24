@@ -28,6 +28,132 @@ body {
   animation: project-cards-swipe-previous 360ms ease-out both;
 }
 
+.pixel-simba {
+  animation: pixel-simba-walk 900ms steps(2, end) infinite;
+  height: 40px;
+  image-rendering: pixelated;
+  left: 9.25rem;
+  position: absolute;
+  top: 4rem;
+  width: 56px;
+}
+
+.pixel-simba span {
+  display: block;
+  position: absolute;
+}
+
+.pixel-simba-body {
+  background: #c79a68;
+  box-shadow:
+    4px 0 #a67a55,
+    8px 0 #c79a68,
+    12px 0 #a67a55,
+    16px 0 #c79a68,
+    20px 0 #a67a55,
+    24px 0 #c79a68,
+    0 4px #b88a5e,
+    4px 4px #e0bd8c,
+    8px 4px #b88a5e,
+    12px 4px #e0bd8c,
+    16px 4px #b88a5e,
+    20px 4px #e0bd8c,
+    28px 4px #c79a68,
+    4px 8px #c79a68,
+    8px 8px #f3dcc0,
+    12px 8px #c79a68,
+    16px 8px #f3dcc0,
+    20px 8px #c79a68,
+    28px 8px #8f6746;
+  height: 4px;
+  left: 8px;
+  top: 20px;
+  width: 4px;
+}
+
+.pixel-simba-head {
+  background: #c79a68;
+  box-shadow:
+    4px 0 #e0bd8c,
+    8px 0 #c79a68,
+    0 4px #e0bd8c,
+    4px 4px #e0bd8c,
+    8px 4px #c79a68,
+    12px 4px #8f6746,
+    0 8px #c79a68,
+    4px 8px #e0bd8c,
+    8px 8px #c79a68;
+  height: 4px;
+  left: 36px;
+  top: 12px;
+  width: 4px;
+}
+
+.pixel-simba-ear {
+  background: #c79a68;
+  height: 4px;
+  top: 8px;
+  width: 4px;
+}
+
+.pixel-simba-ear-left {
+  box-shadow: 4px 4px #c79a68;
+  left: 36px;
+}
+
+.pixel-simba-ear-right {
+  box-shadow: -4px 4px #c79a68;
+  left: 44px;
+}
+
+.pixel-simba-eye {
+  background: #111827;
+  height: 4px;
+  left: 44px;
+  top: 16px;
+  width: 4px;
+}
+
+.pixel-simba-nose {
+  background: #f3dcc0;
+  box-shadow: 4px 0 #111827;
+  height: 4px;
+  left: 44px;
+  top: 20px;
+  width: 4px;
+}
+
+.pixel-simba-tail {
+  animation: pixel-simba-tail 900ms steps(2, end) infinite;
+  background: #c79a68;
+  box-shadow:
+    -4px -4px #c79a68,
+    -8px -8px #8f6746,
+    -12px -8px #8f6746;
+  height: 4px;
+  left: 8px;
+  top: 20px;
+  width: 4px;
+}
+
+.pixel-simba-leg {
+  background: #b88a5e;
+  height: 12px;
+  top: 32px;
+  transform-origin: top center;
+  width: 4px;
+}
+
+.pixel-simba-leg-back {
+  animation: pixel-simba-back-leg 900ms steps(2, end) infinite;
+  left: 16px;
+}
+
+.pixel-simba-leg-front {
+  animation: pixel-simba-front-leg 900ms steps(2, end) infinite;
+  left: 32px;
+}
+
 @keyframes project-cards-swipe-next {
   from {
     opacity: 0;
@@ -52,9 +178,52 @@ body {
   }
 }
 
+@keyframes pixel-simba-walk {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes pixel-simba-tail {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes pixel-simba-back-leg {
+  from {
+    transform: translateX(-2px);
+  }
+
+  to {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes pixel-simba-front-leg {
+  from {
+    transform: translateX(2px);
+  }
+
+  to {
+    transform: translateX(-2px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .project-cards-swipe-next,
-  .project-cards-swipe-previous {
+  .project-cards-swipe-previous,
+  .pixel-simba,
+  .pixel-simba-tail,
+  .pixel-simba-leg {
     animation: none;
   }
 }

@@ -54,7 +54,7 @@ export default function Sidebar() {
     <aside className="fixed left-0 top-0 h-screen w-72 px-12 py-24 border-0 bg-[#0a0a0a]">
       
       {/* Profile Pic */}
-      <div className="mb-4">
+      <div className="relative mb-4">
         <div className="w-24 h-24 rounded-full border-2 border-zinc-800 overflow-hidden mb-6 scale-150 -translate-y-4 translate-x-4">
           <img 
             src="/profile_pic.jpg"
@@ -62,6 +62,7 @@ export default function Sidebar() {
             className="w-full h-full object-cover scale-150 -translate-y-4"
           />
         </div>
+        <PixelSimba />
       </div>
 
       {/* Name and Title */}
@@ -70,7 +71,7 @@ export default function Sidebar() {
           Edward Feng
         </h1>
         <p className="text-sm mt-2 text-gray-300">
-          Graduate Student
+          Machine Learning Engineer
         </p>
       </div>
 
@@ -90,7 +91,7 @@ export default function Sidebar() {
       {/* Location */}
       <div className="mt-4 mb-20 flex items-center gap-2 text-gray-400">
         <MapPin size={16} />
-        <span className="text-sm">Raleigh, NC</span>
+        <span className="text-sm">Cary, NC</span>
       </div>
 
       {/* Navigation Links */}
@@ -123,4 +124,20 @@ export default function Sidebar() {
       </nav>
     </aside>
   );
+}
+
+function PixelSimba() {
+  return (
+    <div className="pixel-simba" aria-label="Pixel art Simba walking right">
+      <span className="pixel-simba-tail" />
+      <span className="pixel-simba-body" />
+      <span className="pixel-simba-head" />
+      <span className="pixel-simba-ear pixel-simba-ear-left" />
+      <span className="pixel-simba-ear pixel-simba-ear-right" />
+      <span className="pixel-simba-eye" />
+      <span className="pixel-simba-nose" />
+      <span className="pixel-simba-leg pixel-simba-leg-back" />
+      <span className="pixel-simba-leg pixel-simba-leg-front" />
+    </div>
+  )
 }

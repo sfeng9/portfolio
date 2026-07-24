@@ -9,6 +9,55 @@ html {
 body {
   font-family: 'Inter', sans-serif;
 }
+
+::selection {
+  color: #041412;
+  background: #5eead4;
+}
+
+::-moz-selection {
+  color: #041412;
+  background: #5eead4;
+}
+
+.project-cards-swipe-next {
+  animation: project-cards-swipe-next 360ms ease-out both;
+}
+
+.project-cards-swipe-previous {
+  animation: project-cards-swipe-previous 360ms ease-out both;
+}
+
+@keyframes project-cards-swipe-next {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes project-cards-swipe-previous {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-cards-swipe-next,
+  .project-cards-swipe-previous {
+    animation: none;
+  }
+}
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

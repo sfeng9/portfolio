@@ -1,68 +1,125 @@
+import { useState } from "react"
+
+const skillCategories = [
+  {
+    label: "Machine Learning",
+    skills: [
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "OpenCV",
+      "Scikit-learn",
+      "RootSIFT",
+      "CLAHE",
+      "SMOTE",
+      "CNN-LSTM",
+      "1D CNN",
+      "NumPy",
+      "Pandas",
+      "Matplotlib",
+    ],
+  },
+  {
+    label: "Software Engineering",
+    skills: [
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Express",
+      "Docker",
+      "Git",
+      "Jest",
+      "REST APIs",
+      "Material UI",
+      "HTML/CSS",
+    ],
+  },
+  {
+    label: "Database Systems",
+    skills: [
+      "SQL",
+      "MySQL",
+      "MariaDB",
+      "Sequelize",
+      "Stored Procedures",
+      "Database Triggers",
+      "Offline Sync",
+      "IndexedDB",
+      "PyDriller",
+      "Git Mining",
+      "Pandas",
+      "Python",
+    ],
+  },
+  {
+    label: "Parallel Systems",
+    skills: [
+      "CUDA",
+      "OpenMP",
+      "OpenACC",
+      "SLURM",
+      "Multi-node GPU Training",
+      "C",
+      "TensorFlow",
+    ],
+  },
+  {
+    label: "Other",
+    skills: [
+      "Git",
+      "Docker",
+      "Docker Compose",
+      "Shibboleth",
+      "OAuth",
+      "PKCE",
+      "SLURM",
+      "Matlab",
+      "R",
+      "Vercel",
+    ],
+  },
+]
+
 export default function Skills() {
-  const languageList = [
-    "Java", "Python", "SQL", "JavaScript", "C", "CUDA", "R", "Matlab", 
-    "HTML/CSS", "TypeScript"
-  ];
-  const toolList = [
-    "Node.js", "React.js", "AngularJS", "Flask", "NumPy", "Pandas", "Matplotlib",
-    "Docker", "Jest", "Scikit-learn", "Git", "Wireshark", "SonarQube", "Snyk",
-    "Apache Hadoop", "Apache Spark", "OpenMP", "OpenACC", "Tensorflow", "PyTorch", "OpenCV", "Vercel"
-  ];
+  const [activeCategory, setActiveCategory] = useState(skillCategories[0].label)
+  const activeSkills =
+    skillCategories.find((category) => category.label === activeCategory)
+      ?.skills ?? []
 
   return (
     <section id="skills" className="mb-32">
-      <h2 className="text-lg tracking-widest font-bold mb-2 text-white">
+      <h2 className="mb-2 text-lg font-bold tracking-widest text-white">
         Skills
       </h2>
-      <div className="w-12 h-1 bg-white mt-2 mb-10"></div> 
+      <div className="mb-10 mt-2 h-1 w-12 rounded-full bg-white"></div>
 
-      <h1 className="text-sm font-semibold text-gray-400 mt-4 mb-2 p-4">Programming Languages</h1>
-      <div className="flex flex-wrap gap-3 p-8">
-        {languageList.map((skill) => (
-          <span
-            key={skill}
-            className="
-              px-5 py-2 
-              rounded-full 
-              bg-zinc-900/50 
-              border border-zinc-800 
-              text-gray-300 
-              text-sm font-medium
-              transition-all duration-300 ease-in-out
-              cursor-default
-              /* The Glow Effects on Hover */
-              hover:text-white 
-              hover:border-violet-500/50 
-              hover:bg-zinc-800
-              hover:shadow-[0_0_20px_rgba(139,92,246,0.3)]
-              hover:-translate-y-0.5
-            "
-          >
-            {skill}
-          </span>
-        ))}
+      <div className="mb-6 flex flex-wrap gap-3 px-1">
+        {skillCategories.map((category) => {
+          const isActive = activeCategory === category.label
+          return (
+            <button
+              key={category.label}
+              type="button"
+              onClick={() => setActiveCategory(category.label)}
+              className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                isActive
+                  ? "border-teal-300 bg-teal-300 text-zinc-950"
+                  : "border-zinc-800 bg-zinc-900/50 text-gray-300 hover:border-teal-300/60 hover:text-white"
+              }`}
+            >
+              {category.label}
+            </button>
+          )
+        })}
       </div>
-      <h1 className="text-sm font-semibold text-gray-400 mt-4 mb-2 p-4">Tools & Frameworks</h1>
-      <div className="flex flex-wrap gap-3 p-8">
-        {toolList.map((skill) => (
+
+      <div className="flex flex-wrap gap-3 p-4">
+        {activeSkills.map((skill) => (
           <span
             key={skill}
-            className="
-              px-5 py-2 
-              rounded-full 
-              bg-zinc-900/50 
-              border border-zinc-800 
-              text-gray-300 
-              text-sm font-medium
-              transition-all duration-300 ease-in-out
-              cursor-default
-              /* The Glow Effects on Hover */
-              hover:text-white 
-              hover:border-violet-500/50 
-              hover:bg-zinc-800
-              hover:shadow-[0_0_20px_rgba(139,92,246,0.3)]
-              hover:-translate-y-0.5
-            "
+            className="cursor-default rounded-full border border-zinc-800 bg-zinc-900/50 px-5 py-2 text-sm font-medium text-gray-300 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:border-teal-300/60 hover:bg-zinc-800 hover:text-white hover:shadow-[0_0_20px_rgba(45,212,191,0.22)]"
           >
             {skill}
           </span>

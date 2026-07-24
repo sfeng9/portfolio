@@ -6,7 +6,7 @@ export default function About() {
       </h2>
       <div className="w-12 h-1 bg-white mt-2 mb-8 rounded-full"></div> 
       <p className="leading-7 text-gray-400 p-4">
-        Full-stack focused Computer Science graduate with a strong background in software engineering, operating systems, database systems, and computer networks (Layer 2). Experienced in designing scalable applications and knowledgeable in machine learning and parallel computing, seeking to build high-performance, production-grade systems. Currently deepening expertise in machine learning through advanced coursework in IoT data mining, biometric authentication systems, and mobile health analytics, focusing on supervised/unsupervised learning, pattern extraction, and evaluation metrics.
+        I am a Computer Science graduate student focused on machine learning engineering, with experience building applied AI systems in biometrics, physiological signal processing, computer vision, and software analytics. I enjoy turning data-heavy problems into reliable pipelines, trained models, and measurable evaluations. I also bring full-stack and database systems experience, which helps me build machine learning work with production-minded software practices.
       </p>
     </section>
   )

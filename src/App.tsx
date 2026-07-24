@@ -13,7 +13,7 @@ export default function App() {
         <Navbar />
 
         <main className="ml-72 w-full border-0">
-          <div className="max-w-3xl mx-auto px-12 py-24">
+          <div className="max-w-5xl mx-auto px-8 py-24 lg:px-12">
             <About />
             <Experience />
             <Projects />

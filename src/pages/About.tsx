@@ -39,7 +39,8 @@ export default function About() {
         <article>
           <h3 className="text-base font-semibold text-white">Beyond Work</h3>
           <p className="mt-3 leading-7 text-gray-400">
-            Outside of engineering, I spend a lot of time around gaming, fashion, photography, strength training, running, biking, rock climbing, and making coffee or matcha. Swimming is on the list of habits I want to build next.
+            Outside of engineering, I spend a lot of time around gaming (JRPG, rhythm, FPS, sims, you name it), fashion, photography, drumming, strength training, running, biking, rock climbing, and making coffee or matcha. I want to get into swimming since my goal is to finish an IRONMAN someday when I'm like 30, but not gonna lie I hate swimming.
+            A not so fun fact about me is that I get injured really really easily. I've torn my meniscus and broken my thumbs from volleyball, hurt my shoulders and finger pulleys from rock climbing, knees from running, and a lot more. People say I put in too much effort into the things I love to do.
           </p>
           <p className="mt-3 leading-7 text-gray-400">
             I also have a cat named Simba, who deserves his own corner of the portfolio.
@@ -71,7 +72,7 @@ export default function About() {
                   Simba Gallery
                 </h3>
                 <p className="mt-3 leading-7 text-gray-400">
-                  Simba is the sweetest and nicest cat! However, he's tooooo friendly to strangers. Sometimes I wonder if he even knows I'm his dad, or if he's fine as long as he has food.
+                  Simba is the sweetest and nicest cat! However, he's way tooooo friendly to strangers. Sometimes I wonder if he even knows I'm his dad, or if he's fine as long as he has food.
                 </p>
               </div>
               <button

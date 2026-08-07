@@ -1,20 +1,5 @@
 import { ExternalLink } from "lucide-react"
-
-export type Project = {
-  title: string
-  description: string
-  skills: string[]
-  repo?: string
-  screenshots?: string[]
-  writeup?: {
-    overview: string
-    highlights?: string[]
-    sections: {
-      title: string
-      content: string[]
-    }[]
-  }
-}
+import type { Project } from "../data/projects"
 
 type Props = {
   project: Project

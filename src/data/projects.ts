@@ -228,6 +228,48 @@ const projectsBySlug: Record<string, Project> = {
       sections: [],
     },
   },
+  sebastian: {
+    slug: "sebastian",
+    title: "S.E.B.A.S.T.I.A.N.",
+    description:
+      "Built a local-first Windows voice assistant with a custom wake word, local speech recognition, Ollama tool calling, and Home Assistant integration for controlling smart-home devices.",
+    skills: [
+      "Python",
+      "Home Assistant",
+      "Ollama",
+      "Faster Whisper",
+      "openWakeWord",
+      "Piper",
+      "SQLite",
+      "REST APIs",
+    ],
+    imageFolder: "/projects/sebastian",
+    repo: "https://github.com/sfeng9/S.E.B.A.S.T.I.A.N",
+    screenshots: [],
+    writeup: {
+      intro:
+        "I built Sebastian as a local-first voice assistant for my Windows PC. I wanted something I could wake up by name, talk to naturally, and use for both everyday computer tasks and smart-home controls without sending the main voice pipeline to a cloud assistant.",
+      bullets: [
+        "It listens for a custom Sebastian wake word, detects when I stop speaking, transcribes the command locally, and speaks the response back.",
+        "I connected it to Home Assistant, Gmail, Google Calendar, weather, web search, reminders, and a set of allowlisted PC controls.",
+        "I also built confirmation and permission checks around sensitive actions such as shutting down the PC or changing smart-home devices.",
+      ],
+      sections: [
+        {
+          title: "Tech Stack",
+          body: [
+            "The assistant is written in Python. It uses openWakeWord for wake-word detection, Faster Whisper for speech-to-text, Ollama with Qwen for conversation and tool calling, and Piper for text-to-speech. Home Assistant provides the IoT layer, while SQLite stores local notes, tasks, lists, and reminders.",
+          ],
+        },
+        {
+          title: "What It Can Do",
+          body: [
+            "Sebastian can answer questions, check live information, manage my calendar and reminders, control approved Windows apps, and operate configured lights, switches, fans, thermostats, and scenes through Home Assistant. The integrations are separated into tools, so the assistant only gets access to the capability needed for that request.",
+          ],
+        },
+      ],
+    },
+  },
 }
 
 export const projectCategories: ProjectCategory[] = [
@@ -245,10 +287,15 @@ export const projectCategories: ProjectCategory[] = [
   {
     label: "Software Engineering",
     projects: [
+      projectsBySlug["sebastian"],
       projectsBySlug["pixelmp3"],
       projectsBySlug["christmas-tree-database"],
       projectsBySlug["inventory-management-system"],
     ],
+  },
+  {
+    label: "Embedded Systems / IoT",
+    projects: [projectsBySlug["sebastian"]],
   },
   {
     label: "Database Systems",

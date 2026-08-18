@@ -40,6 +40,22 @@ const skillCategories = [
     ],
   },
   {
+    label: "Embedded Systems / IoT",
+    skills: [
+      "Audio Processing",
+      "Faster Whisper",
+      "Home Assistant",
+      "IoT Integration",
+      "Ollama",
+      "ONNX",
+      "openWakeWord",
+      "Piper",
+      "Python",
+      "REST APIs",
+      "SQLite",
+    ],
+  },
+  {
     label: "Database Systems",
     skills: [
       "Database Triggers",

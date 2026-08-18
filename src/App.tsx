@@ -5,6 +5,7 @@ import Contact from "./pages/Contact"
 import Experience from "./pages/Experience"
 import Education from "./pages/Education"
 import Skills from "./pages/Skills"
+import Certifications from "./pages/Certifications"
 export default function App() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#0a0a0a] text-gray-300">
@@ -19,6 +20,7 @@ export default function App() {
             <Projects />
             <Education />
             <Skills />
+            <Certifications />
             <Contact />
           </div>
         </main>

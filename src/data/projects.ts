@@ -1,7 +1,13 @@
 // Edit portfolio project content here.
 // `description` is the short card summary. Keep it concise.
 // `writeup` is the casual modal story you can fill in yourself.
-// Put images under `public/projects/<slug>/`, then list them in `screenshots`.
+// Put images under `public/projects/<slug>/` or import them from `src/images`,
+// then list them in `screenshots`.
+
+import pixelmp3Main from "../images/PixelMP3/pixelmp3_main.png"
+import pixelmp3Minimized from "../images/PixelMP3/pixelmp3_minimized.png"
+import pixelmp3Playing from "../images/PixelMP3/pixelmp3_playing.png"
+import pixelmp3Songlist from "../images/PixelMP3/pixelmp3_songlist.png"
 
 export type ProjectWriteupSection = {
   title: string
@@ -193,11 +199,44 @@ const projectsBySlug: Record<string, Project> = {
       "Developed a cross-platform desktop music player with Electron and React, featuring a custom pixel-art interface and secure OAuth + PKCE authentication flow. Integrated Spotify Web Playback SDK and REST APIs for real-time playback and token refreshing.",
     skills: ["Electron", "React", "JavaScript", "OAuth", "PKCE", "Spotify API"],
     imageFolder: "/projects/pixelmp3",
+    repo: "https://github.com/sfeng9/PixelMP3",
     screenshots: [],
     writeup: {
-      intro: "",
-      bullets: [],
-      sections: [],
+      intro:
+        "PixelMP3 is basically my take on a tiny old-school MP3 player for Spotify. I wanted the controls I use all the time without keeping the full Spotify window open, so I wrapped playlists and Spotify Connect playback in a small pixel-art desktop app.",
+      bullets: [
+        "Spotify still handles the music; PixelMP3 controls whichever desktop, phone, or speaker is active through Spotify Connect.",
+        "I gave it green, blue, amber, and purple themes, plus a compact mode for when I only want the basic controls on screen.",
+      ],
+      sections: [
+        {
+          title: "The Player",
+          body: [
+            "After I log in, the player shows the album art, song and artist, playback progress, and volume. It has the usual play, pause, previous, next, shuffle, and repeat controls, but the whole thing is styled like a little piece of retro hardware.",
+          ],
+          screenshots: [pixelmp3Main, pixelmp3Playing],
+        },
+        {
+          title: "Playlists",
+          body: [
+            "I can browse my Spotify playlists inside the app, search through the songs, and click a track to start playing it on my active Spotify device. That keeps the app small while still giving me the part of Spotify I actually need.",
+          ],
+          screenshots: [pixelmp3Songlist],
+        },
+        {
+          title: "Compact Mode",
+          body: [
+            "When I do not need the full player, I can collapse it into a thin strip with the current song, progress bar, and previous, play, and next buttons. It is handy for leaving the player in a corner while I work.",
+          ],
+          screenshots: [pixelmp3Minimized],
+        },
+        {
+          title: "Tech Stack",
+          body: [
+            "The desktop shell is Electron, and the interface is built with React and Vite. Spotify login uses the Authorization Code flow with PKCE and a small local callback server, so I do not have to ship a Spotify client secret inside the app. Tokens are stored in Electron's local user-data folder and refreshed when needed, while the Spotify Web API handles playlists and playback controls.",
+          ],
+        },
+      ],
     },
   },
   "christmas-tree-database": {
